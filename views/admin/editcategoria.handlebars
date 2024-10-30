@@ -1,0 +1,13 @@
+<h2 class="mb-4">Editar Categoria</h2>
+<div class="card">
+    <form action="/admin/categorias/edit" method="POST">
+        <div class="card-body">
+            <input type="hidden" name="id" value="{{categoria._id}}">
+            <label for="nome">Nome:</label>
+            <input type="text" class="form-control" name="nome" id="nome" value="{{categoria.nome}}" placeholder="nome da categoria">
+            <label for="nome">Slug:</label>
+            <input type="text" class="form-control"  name="slug" id="slug" value="{{categoria.slug}}" placeholder="slug da categoria">
+            <button type="submit" class="btn btn-success mt-4">Editar Categoria</button>
+        </div>
+    </form>
+</div>

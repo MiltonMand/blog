@@ -1,0 +1,25 @@
+<div class="jumbotron">
+    <h1>Bem vindo nao blog app</h1>
+    <p class="display">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro culpa ipsa, voluptates eveniet hic officiis sequi deserunt doloribus qui tempora cupiditate reiciendis dolorum pariatur, ut illum accusantium, consequatur eum dolore!</p>
+    <hr class="my-4">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam cum facere delectus rerum dolores modi molestias laudantium obcaecati sed! Inventore culpa illum hic et officia quis consequuntur sapiente, enim tempore.</p>
+    <p class="lead">
+        <a href="/usuarios/registro" class="btn btn-primary btn-lg">Crie uma conta</a>
+    </p>
+</div>
+
+<h2>postagens recentes:</h2>
+{{#each postagens}}
+<div class="card mt-4">
+    <div class="card-body">
+        <h4>{{titulo}}</h4>
+        <h6>{{conteudo}}</h6>
+        <a href="/postagem/{{slug}}"><button class="btn btn-success">Leia mais</button></a>
+        <hr>
+        <small>categoria: {{categoria.nome}}</small> <br>
+        <small><strong>data:</strong> {{date}}</small> <br>
+    </div>
+</div>
+{{else}}
+    <h3>nenhuma postagem</h>
+{{/each}}
