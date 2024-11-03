@@ -12,6 +12,7 @@ const router = require('./rotas/admin');
 const usuarios = require('./rotas/usuario')
 const passport = require('passport')
 require('./config/auth')(passport)
+const db = require('./config/db')
 
 require('./models/postagem')
 const Postagem = mongoose.model('postagens')
@@ -35,12 +36,8 @@ app.set('view engine', 'handlebars');
 
 //mongoose
 mongoose.Promise = global.Promise
-// Conexão com MongoDB Atlas ou localhost
-const dbUri = process.env.NODE_ENV === 'production'
-  ? 'mongodb+srv://milton:123@clusterteste.sn2lk.mongodb.net/?retryWrites=true&w=majority&appName=Clusterteste'
-  : 'mongodb://localhost:27017/blogApp';
 
-mongoose.connect(dbUri, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(db.mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.error('MongoDB connection error:', err));
 
