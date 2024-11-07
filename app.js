@@ -1,14 +1,14 @@
 //caregando modulos
-const express = require('express');
-const { engine } = require('express-handlebars');
+const express = require('express')
+const { engine } = require('express-handlebars')
 const bodyParser = require("body-parser")
 const app = express()
 const admin = require('./rotas/admin')
 const path = require('path')
 const mongoose = require("mongoose")
 const session = require('express-session')
-const flash = require('connect-flash');
-const router = require('./rotas/admin');
+const flash = require('connect-flash')
+const router = require('./rotas/admin')
 const usuarios = require('./rotas/usuario')
 const passport = require('passport')
 require('./config/auth')(passport)
